@@ -13,12 +13,17 @@ function super_digit($sum_of_string){
     }//else return $sum;
 }
 
-$num = 148;
-$k = 3;
+
+/*
+ * Think before running this code with this long string
+ * Uncomment to run the code
+ * $num and $k
+ */
+//$num = 3546630947312051453014172159647935984478824945973141333062252613718025688716704470547449723886626736;
+//$k = 100000;
 $str_to_num = (string)$num;
 $sum_of_string = str_repeat($str_to_num, $k);
 super_digit($sum_of_string);
-
 
 
 
