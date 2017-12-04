@@ -4,7 +4,7 @@
      * Splitting or sorting for upper case in a string(camelCase)
      * for statement by counting the first index
     */
-    /*
+
     $string = "makeMoneyEveryDay";
     $indexes = [];
     $new = [];
@@ -20,7 +20,7 @@
 
     $new[] = substr($string,end($indexes),strlen($string) - 1);
     array_unshift($new, count($new));
-    print_r($new);*/
+    print_r($new);
 
 
 /**
