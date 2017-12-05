@@ -19,3 +19,23 @@ function super_digit($num, $k) {
 $num = 993;
 $k_times = 1;
 super_digit($num, $k_times);
+
+//from Paul
+function superDigit($n, $k = null) {
+    if ($k > 100000) return false;
+    $n = (string) $n;
+    $p = isset($k)? (digitSum($n) * ($k? $k:1)):$n;
+    if (strlen($p) == 1) return $p;
+    return superDigit(digitSum($p));
+}
+
+function digitSum($n) {
+  // in case splitting doesn't cut it
+  $sum = 0;
+  $n = (string) $n;
+  for ($i=0; $i<strlen($n); $i++) $sum += $n[$i];
+  return $sum;
+}
+
+$result = superDigit($n, $k);
+echo $result . "\n";
