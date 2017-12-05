@@ -1,27 +1,21 @@
 <?php
-function getSum($num){
-//    echo $num."\n";
-    $len = strlen($num);
-//    echo $len."\n";
-    $new_num = 0;
-    for ($i = 0; $i < $len; $i++ ) {
-        echo $i."\n";
-        $new_num = $new_num +$num[$i];
-    }
-    return $new_num;
+function getSum($str_to_num){
+    $str_to_num = (string)$str_to_num;
+    $sum = 0;
+
+    if(strlen($str_to_num) > 1) {  
+        for($i = 0; $i < strlen($str_to_num); $i++){
+            $sum += $str_to_num[$i];
+        }
+            if(strlen((string)$sum) > 1 || strlen((string)$sum) == 1) getSum($sum);
+    } else echo 'single num '.$str_to_num;    
 }
-$n = 148;
-$k = 3;
-$p = 0;
-$new = str_repeat($n, $k);
-$len = strlen($new);
-//echo $len;
-$p = getSum($new);
-$new_p = getSum($p);
-//while($p){
-//    if(strlen($p) == 1){
-//        break;
-//    }
-//    $p = getSum($p);
-//    echo $p;
-//}
+
+function super_digit($num, $k) {
+    $repeated_string = str_repeat((string)$num, $k);
+    getSum($repeated_string);
+}
+
+$num = 993;
+$k_times = 1;
+super_digit($num, $k_times);
